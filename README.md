@@ -8,7 +8,7 @@
  
  ***Nota:***
  
- Este ***Script*** Funcionará realmente para otener las Contraseñas De Outlook y Gmail, si y solo si, el correo de la victima tiene activada la opcion ***Aplicaciones Menos Seguras***.
+ Este ***Script*** Funcionará realmente para otener las Contraseñas De Outlook y Gmail, si y solo si, el correo de la victima tiene activada la opcion ***Acceso de aplicaciones menos seguras***.
  
  Si esta opción esta desactivada, el ***Script*** pasara por alto la contraseña correcta (y al mismo tiempo, le llegara un correo a la victima avisando del intento de inicio de sesion) y el ***Script*** seguira probando hasta terminar el Diccionario.
  
