@@ -119,14 +119,26 @@ Banner8 = """
 
 
 Banner9 = """
-
-
-
+                                                    
+                         ____|  \  |  ___|      |   
+                         __|   |\/ | |      __| |  /
+                         |     |   | |     |      < 
+                        _____|_|  _|\____|_|   _|\_\
+                                                        By: LawlietJH
+"""
+#(Font: 'shadow')
 
 Banner10 = """
-
+                                                           
+                    _______ _______ _______  ______ _     _
+                    |______ |  |  | |       |_____/ |____/ 
+                    |______ |  |  | |_____  |    \_ |    \_
+                                                           
+                                                        By: LawlietJH
+"""
+#(Font: 'cyberlarge')
 
 def Banner():
     Banners = [ Banner1, Banner2, Banner3, Banner4, Banner5,\
-				Banner6 ]
+				Banner6, Banner7, Banner8, Banner9, Banner10 ]
     return random.choice(Banners)
