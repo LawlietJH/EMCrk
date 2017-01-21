@@ -242,10 +242,35 @@ Banner18 = """
 #(Font: 'varsity')
 
 
+Banner19 = """
+                     _______ _______ _______       _     
+                    (_______|_______|_______)     | |    
+                     _____   _  _  _ _        ____| |  _ 
+                    |  ___) | ||_|| | |      / ___) |_/ )
+                    | |_____| |   | | |_____| |   |  _ ( 
+                    |_______)_|   |_|\______)_|   |_| \_)
+                                                         
+                                                          By: LawlietJH
+"""
+#(Font: 'rounded')
+
+
+Banner20 = """
+                                                               
+                _/_/_/_/  _/      _/    _/_/_/            _/   
+               _/        _/_/  _/_/  _/        _/  _/_/  _/  _/
+              _/_/_/    _/  _/  _/  _/        _/_/      _/_/   
+             _/        _/      _/  _/        _/        _/  _/  
+            _/_/_/_/  _/      _/    _/_/_/  _/        _/    _/ 
+                                                               
+                                                          By: LawlietJH
+"""
+#(Font: 'lean')
+
 
 def Banner():
     Banners = [ Banner1, Banner2, Banner3, Banner4, Banner5,\
 				Banner6, Banner7, Banner8, Banner9, Banner10,\
-				Banner11, Banner12, Banner13, Banner14, Banner15\
-				Banner16, Banner17, Banner18 ]
+				Banner11, Banner12, Banner13, Banner14, Banner15,\
+				Banner16, Banner17, Banner18, Banner19, Banner20 ]
     return random.choice(Banners)
