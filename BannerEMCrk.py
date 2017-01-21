@@ -270,7 +270,7 @@ Banner20 = """
 
 def Banner():
     Banners = [ Banner1, Banner2, Banner3, Banner4, Banner5,\
-		Banner6, Banner7, Banner8, Banner9, Banner10,\
-		Banner11, Banner12, Banner13, Banner14, Banner15,\
-		Banner16, Banner17, Banner18, Banner19, Banner20 ]
+				Banner6, Banner7, Banner8, Banner9, Banner10,\
+				Banner11, Banner12, Banner13, Banner14, Banner15,\
+				Banner16, Banner17, Banner18, Banner19, Banner20 ]
     return random.choice(Banners)
