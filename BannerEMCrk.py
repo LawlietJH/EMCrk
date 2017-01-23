@@ -267,6 +267,7 @@ Banner20 = """
 """
 #(Font: 'lean')
 
+
 Banner21 = """
                                                            
                 ███████╗███╗   ███╗ ██████╗██████╗ ██╗  ██╗
@@ -280,6 +281,7 @@ Banner21 = """
 """
 #(Font: 'ANSI shadow' - Desde: http://patorjk.com/software/taag)
 
+
 def Banner():
     Banners = [ Banner1, Banner2, Banner3, Banner4, Banner5,\
 		Banner6, Banner7, Banner8, Banner9, Banner10,\
@@ -287,3 +289,4 @@ def Banner():
 		Banner16, Banner17, Banner18, Banner19, Banner20,\
 		Banner21 ]
     return random.choice(Banners)
+
