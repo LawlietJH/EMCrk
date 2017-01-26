@@ -6,6 +6,22 @@
  + Abre el ***script*** ***EMCrk.py*** y coloca el nombre completo del correo victima (ejemplo@gmail.com, ejemplo@hotmail.com, etc.).
  + Crea tu diccionario personalizado o Crea el archivo ***pwd.zion*** en donde deberas agregar todas las palabras que desees utilizar.
  + Puedes Colocar el nombre de tu diccionario al abrir el *script* o simplemente precionar **Enter** y se tomara el diccionario por defecto: ***pwd.zion***
+
+## Tipos De Correos Soportados En Este Script:
+
+### Comprobados [_02_]:
+
+***gmail.com*** y ***hotmail.com***
+
+### Aún en prubas [_33_]:
+
+_mail.com,          **yahoo.com,**          ymail.com,         **roketmail.com,**     gmx.es,
+**zoho.com,**          fastmail.com,       **hushmail.com,**      live.com,          **aol.com,**
+airmail.net,       **1and1.com,**          att.net,           **bluewin.ch,**        btconnect.com,
+**earthlink.net,**     hotpop.com,         **inbox.com,**         libero.it,         **lycos.com,**
+o2.com,            **orange.com,**         terra.com,         **tiscali.co.uk,**     virgin.net,
+**wanadoo.fr,**        housemusic.com,     **web.de,***            verizon.net,       **comcast.net,**
+upla.cl,           **udec.cl,**            rediffmail.com_
  
 ## [ ! ] Nota:
 
