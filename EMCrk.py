@@ -1,14 +1,14 @@
 ﻿# -*- coding: utf-8 -*-
-#                                                               
-#        `7MM'""YMM  `7MMM.     ,MMF' .g8'""bgd       `7MM      
-#          MM    `7    MMMb    dPMM .dP'     `M         MM      
-#          MM   d      M YM   ,M MM dM'       ``7Mb,od8 MM  ,MP'
-#          MMmmMM      M  Mb  M' MM MM           MM' "' MM ;Y   
-#          MM   Y  ,   M  YM.P'  MM MM.          MM     MM;Mm   
-#          MM     ,M   M  `YM'   MM `Mb.     ,'  MM     MM `Mb. 
-#        .JMMmmmmMMM .JML. `'  .JMML. `"bmmmd' .JMML. .JMML. YA.
-#                                                               
-#                                                  By: LawlietJH
+#
+#                                                         
+#              ███████╗███╗   ███╗ ██████╗██████╗ ██╗  ██╗
+#              ██╔════╝████╗ ████║██╔════╝██╔══██╗██║ ██╔╝
+#              █████╗  ██╔████╔██║██║     ██████╔╝█████╔╝ 
+#              ██╔══╝  ██║╚██╔╝██║██║     ██╔══██╗██╔═██╗ 
+#              ███████╗██║ ╚═╝ ██║╚██████╗██║  ██║██║  ██╗
+#              ╚══════╝╚═╝     ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝
+#                                                         
+#                                                        By: LawlietJH
 
 from BannerEMCrk import Banner
 import os.path as path
@@ -22,11 +22,11 @@ import os
 Autor = "By: LawlietJH"
 Version = "v_1.0.8"
 
-#GMCrk - Banner Random
+#EMCrk - Banner Random
 banner = str(Banner()+"\t\t\t\t\t\t\t\t"+Version+"\n\n\t [-] Obten Contraseñas de Cuentas de Correos Por Fuerza Bruta [-] \n")
 
 ServC = """
-    35 Servidores De Correos Soportados En Este Script:        
+    35 Servicios De Correos Soportados En Este Script:        
                                                                             
 [*] gmail.com       [*] hotmail.com     [*] mail.com        [*] yahoo.com   
 [*] ymail.com       [*] roketmail.com   [*] gmx.es          [*] zoho.com    
