@@ -3,6 +3,7 @@
 ## Obten Contraseñas de Cuentas de Correo por Fuerza Bruta.
 
 **Modo de uso:**
+ + Para ver la lista de los ***Servicios de Correo*** soportados añadir el argumento **[-s]** en Consola: ***EMCrk.py -s***
  + Abre el ***script*** ***EMCrk.py*** y coloca el nombre completo del correo victima (ejemplo@gmail.com, ejemplo@hotmail.com, etc.).
  + Crea tu diccionario personalizado o Crea el archivo ***pwd.zion*** en donde deberas agregar todas las palabras que desees utilizar.
  + Puedes Colocar el nombre de tu diccionario al abrir el *script* o simplemente precionar **Enter** y se tomara el diccionario por defecto: ***pwd.zion***
