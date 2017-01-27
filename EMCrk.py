@@ -20,32 +20,25 @@ import sys
 import os
 
 Autor = "By: LawlietJH"
-Version = "v1.0.8"
+Version = "v_1.0.8"
 
 #EMCrk - Banner Random
-banner = str(Banner()+"{:>71}".format(Version)+"\n\n{:^80}".format("[-] Obten Contraseñas de Cuentas de Correos Por Fuerza Bruta [-]"))
+banner = str(Banner()+"\t\t\t\t\t\t\t\t"+Version+"\n\n\t [-] Obten Contraseñas de Cuentas de Correos Por Fuerza Bruta [-] \n")
 
-ServC = """\n             35 Servicios De Correos Soportados En Este Script
+ServC = """
+    35 Servicios De Correos Soportados En Este Script:        
                                                                             
- [*] gmail.com       [*] hotmail.com     [*] mail.com        [*] yahoo.com   
- [*] ymail.com       [*] roketmail.com   [*] gmx.es          [*] zoho.com    
- [*] fastmail.com    [*] hushmail.com    [*] live.com        [*] aol.com     
- [*] airmail.net     [*] 1and1.com       [*] att.net         [*] bluewin.ch  
- [*] btconnect.com   [*] earthlink.net   [*] hotpop.com      [*] inbox.com   
- [*] libero.it       [*] lycos.com       [*] o2.com          [*] orange.com  
- [*] terra.com       [*] tiscali.co.uk   [*] virgin.net      [*] wanadoo.fr  
- [*] housemusic.com  [*] web.de          [*] verizon.net     [*] comcast.net 
- [*] upla.cl         [*] udec.cl         [*] rediffmail.com
+[*] gmail.com       [*] hotmail.com     [*] mail.com        [*] yahoo.com   
+[*] ymail.com       [*] roketmail.com   [*] gmx.es          [*] zoho.com    
+[*] fastmail.com    [*] hushmail.com    [*] live.com        [*] aol.com     
+[*] airmail.net     [*] 1and1.com       [*] att.net         [*] bluewin.ch  
+[*] btconnect.com   [*] earthlink.net   [*] hotpop.com      [*] inbox.com   
+[*] libero.it       [*] lycos.com       [*] o2.com          [*] orange.com  
+[*] terra.com       [*] tiscali.co.uk   [*] virgin.net      [*] wanadoo.fr  
+[*] housemusic.com  [*] web.de          [*] verizon.net     [*] comcast.net 
+[*] upla.cl         [*] udec.cl         [*] rediffmail.com
 
 """
-
-ModoDeUso = """\n   Modo De Uso:\n\n\t\t EMCrk.py [-v][-s] | [-a] | [-h]
-\n\n\t -a, --all \t\t Muestra todos los datos juntos y continua\n\t\t\t\t con la ejecución normal del Script.
-\n\t -h, --help \t\t Muestra el Modo De Uso.
-\n\t -s, --serv \t\t Muestra la lista de servicios de correos\n\t\t\t\t soportados.
-\n\t -v, --version \t\t Muestra la versión y autor del Script.
-"""
-
 
 def Correo():
 	
@@ -226,70 +219,21 @@ def Conexion():
 
 def main():
 	
+	
 	os.system('cls')
 	
-	if len(sys.argv) == 2:
-		
-		if sys.argv[1] == "-h" or sys.argv[1] == "--help":
-			print(ModoDeUso)
-			exit(0)
-			
-		if sys.argv[1] == "-v" or sys.argv[1] == "--version":
-			print("\n\n{:^80}\n{:^80}\n{:^80}".format("EMCrk",Autor[4:],Version[1:]))
-			exit(0)
-			
-		if sys.argv[1] == "-s" or sys.argv[1] == "--serv":
-			print(ServC)
-			exit(0)
-			
-		if sys.argv[1] == "-a" or sys.argv[1] == "--all":
-			print("\n\n{:^80}\n{:^80}\n{:^80}".format("EMCrk",Autor[4:],Version[1:]))
-			print(ServC)
-			
-			print(banner)
-			Correo()
-			Diccionario()
-			print(time.strftime("\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
-			Conexion()
-			print(time.strftime("\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
-			print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
-			os.system('Timeout /nobreak 03 > Nul')
-			
-		if not sys.argv[1] == "-s" and not sys.argv[1] == "--serv"\
-		and not sys.argv[1] == "-v" and not sys.argv[1] == "--version"\
-		and not sys.argv[1] == "-h" and not sys.argv[1] == "--help"\
-		and not sys.argv[1] == "-a" and not sys.argv[1] == "--all":
-			print(ModoDeUso)
-			
-	elif len(sys.argv) == 3:
-		if sys.argv[1] == "-v" or sys.argv[1] == "--version"\
-		or sys.argv[2] == "-v" or sys.argv[2] == "--version":
-			print("\n\n{:^80}\n{:^80}\n{:^80}".format("EMCrk",Autor[4:],Version[1:]))
-			
-		if sys.argv[1] == "-s" or sys.argv[1] == "--serv"\
-		or sys.argv[2] == "-s" or sys.argv[2] == "--serv":
-			print(ServC)
-			exit(0)
-			
-		if not sys.argv[1] == "-s" and not sys.argv[1] == "--serv"\
-		and not sys.argv[1] == "-v" and not sys.argv[1] == "--version"\
-		and not sys.argv[1] == "-a" and not sys.argv[1] == "--all"\
-		and not sys.argv[2] == "-s" and not sys.argv[2] == "--serv"\
-		and not sys.argv[2] == "-v" and not sys.argv[2] == "--version":
-			print(ModoDeUso)
+	#~ if sys.argv[1] == "-s":
+		#~ print(ServC)
+		#~ exit(0)
 	
-	elif len(sys.argv) > 3:
-		print(ModoDeUso)
-		
-	else:
-		print(banner)
-		Correo()
-		Diccionario()
-		print(time.strftime("\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
-		Conexion()
-		print(time.strftime("\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
-		print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
-		os.system('Timeout /nobreak 03 > Nul')
+	print(banner)
+	Correo()
+	Diccionario()
+	print(time.strftime("\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
+	Conexion()
+	print(time.strftime("\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
+	print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
+	os.system('Timeout /nobreak 03 > Nul')
 
 
 main()
