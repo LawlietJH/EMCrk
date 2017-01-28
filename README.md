@@ -2,11 +2,33 @@
 
 ## Obten Contraseñas de Cuentas de Correo por Fuerza Bruta.
 
-**Modo de uso:**
- + Para ver la lista de los ***Servicios de Correo*** soportados añadir el argumento **[-s]** en Consola: ***EMCrk.py -s***
- + Abre el ***script*** ***EMCrk.py*** y coloca el nombre completo del correo victima (ejemplo@gmail.com, ejemplo@hotmail.com, etc.).
- + Crea tu diccionario personalizado o Crea el archivo ***pwd.zion*** en donde deberas agregar todas las palabras que desees utilizar.
- + Puedes Colocar el nombre de tu diccionario al abrir el *script* o simplemente precionar **Enter** y se tomara el diccionario por defecto: ***pwd.zion***
+1. Crea tu diccionario personalizado o Crea el archivo ***pwd.zion*** en donde deberas agregar todas las palabras que desees utilizar.
+2. Al abrir el ***script*** coloca el nombre completo del correo victima (ejemplo@gmail.com, ejemplo@hotmail.com, etc.).
+3. Puedes Colocar el nombre de tu diccionario al abrir el ***Script*** o simplemente precionar ***Enter*** y se tomara el diccionario por defecto: ***pwd.zion***
+
+- - -
+
+**Modo de uso: `EMCrk.py [-v][-s] | [-a] | [-h]`**
++ Para ver la ***Versión***, la ***Lista de Servicios de Correos*** y correr el ***Script***, se debe añadir el argumento __[-a] | [--all]__
+  + **`EMCrk.py -a`**
+   
++ Para ver el ***Modo De Uso***, se debe añadir el argumento __[-h] | [--help]__ En Consola.
+  + **`EMCrk.py -h`**
+   
++ Para ver la ***Lista de Servicios de Correo*** soportados, se debe añadir el argumento __[-s] | [--serv]__ En Consola.
+  + **`EMCrk.py -s`**
+   
++ Para ver la versión del ***Script*** se debe añadir el argumento __[-v] | [--version]__ En Consola.
+  + **`EMCrk.py -v`**
+   
++ Para ver la ***Version*** y La ***Lista de Servicios De Correos***, se debe añadir el argumento __[-s]__ y __[-v]__ juntos En Consola.
+  + **`EMCrk.py -s -v`**
+  + **`EMCrk.py -v -s`**
+   
++ O simplemente ejecuta el ***Script*** sin ningun argumento.
+  + **`EMCrk.py`**
+
+- - -
 
 ## Tipos De Correos Soportados En Este Script:
 
@@ -23,6 +45,8 @@ airmail.net,       **1and1.com,**          att.net,           **bluewin.ch,**   
 o2.com,            **orange.com,**         terra.com,         **tiscali.co.uk,**     virgin.net,
 **wanadoo.fr,**        housemusic.com,     **web.de,***            verizon.net,       **comcast.net,**
 upla.cl,           **udec.cl,**            rediffmail.com_
+ 
+- - -
  
 ## [ ! ] Nota:
 
