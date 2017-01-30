@@ -1,4 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
+# Python 3.5
 #
 #                                                         
 #              ███████╗███╗   ███╗ ██████╗██████╗ ██╗  ██╗
@@ -163,14 +164,14 @@ def Diccionario(NombreA):
 				Zion.close
 				print("\n\n\t [*] Saliendo...")
 				os.system('Timeout /nobreak 02 > Nul')
-				main()
+				exit(0)
 			else:
 				print("\n\n\t [*] Saliendo...")
 				os.system('Timeout /nobreak 02 > Nul')
-				main()
+				exit(0)
 				
 	else:
-		print("\n\t No se encontro el Diccionario: "+NombreA)
+		print("\n\t [!] No se encontro el Diccionario: "+NombreA)
 		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.zion")
 		Archivo = "pwd.zion"
 		os.system('Timeout /nobreak 02 > Nul')
@@ -186,11 +187,11 @@ def Diccionario(NombreA):
 				Zion.close
 				print("\n\n\t [*] Saliendo...")
 				os.system('Timeout /nobreak 02 > Nul')
-				main()
+				exit(0)
 			else:
 				print("\n\n\t [*] Saliendo...")
 				os.system('Timeout /nobreak 02 > Nul')
-				main()
+				exit(0)
 
 
 def Conexion():
@@ -245,7 +246,7 @@ def Conexion():
 def main():
 	
 	global NombA
-	os.system('cls')
+	os.system("cls")
 	
 	if len(sys.argv) == 2:
 		
@@ -320,11 +321,13 @@ def main():
 		Diccionario(NombA)
 		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.zion")
 		Correo()
+		TI=time.time()
 		TiempoI = time.strftime("\n\n\n\t [!] Iniciado:   %d/%m/%Y %H:%M:%S")
 		Conexion()
 		TiempoF = time.strftime("\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S")
 		print(TiempoI)
 		print(TiempoF)
+		print("\n\n\t Tiempo Transcurrido:", TI-time.time())
 		
 		if xD == False:
 			
