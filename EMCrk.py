@@ -21,7 +21,7 @@ import sys
 import os
 
 Autor = "By: LawlietJH"
-Version = "v1.1.0"
+Version = "v1.1.1"
 xD = False
 xD2 = False
 NombA = "pwd.zion"
@@ -241,6 +241,9 @@ def Conexion():
 			main()
 		except Exception as ex:
 			print( type(ex).__name__ ) #Para ver cuando ocurre un error y poder añadirlo a las ecepciones, y no cierre el programa.
+		#~ finally:
+			#~ Arch = open("Archivo.zion", "w")
+			#~ Arch.write("*"+Pwd) 
 
 
 def main():
@@ -325,9 +328,11 @@ def main():
 		TiempoI = time.strftime("\n\n\n\t [!] Iniciado:   %d/%m/%Y %H:%M:%S")
 		Conexion()
 		TiempoF = time.strftime("\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S")
+		TF=time.time()
 		print(TiempoI)
 		print(TiempoF)
-		print("\n\n\t Tiempo Transcurrido:", TI-time.time())
+		Tiempo = TF-TI
+		print("\n\n\t Tiempo Transcurrido: {:.2f} segundos".format(Tiempo))
 		
 		if xD == False:
 			
