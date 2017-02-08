@@ -199,6 +199,9 @@ def Conexion():
 	global Archivo
 	global Usuario
 	
+	TI=time.time()
+	TiempoI = time.strftime("\n\n\n\t [!] Iniciado:   %d/%m/%Y %H:%M:%S")
+	
 	#SMTP Puerto 587/TCP (Para Clientes de Correo). Otros SMTP: 25 y 645.
 	smtpserver = smtplib.SMTP(str(nombSMTP), 587)
 	smtpserver.ehlo()
@@ -244,7 +247,13 @@ def Conexion():
 		#~ finally:
 			#~ Arch = open("Archivo.zion", "w")
 			#~ Arch.write("*"+Pwd) 
-
+	
+	TiempoF = time.strftime("\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S")
+	TF=time.time()
+	Tiempo = TF-TI
+	print(TiempoI)
+	print(TiempoF)
+	print("\n\n\t Tiempo Transcurrido: {:.2f} segundos".format(Tiempo))
 
 def main():
 	
@@ -324,15 +333,8 @@ def main():
 		Diccionario(NombA)
 		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.zion")
 		Correo()
-		TI=time.time()
-		TiempoI = time.strftime("\n\n\n\t [!] Iniciado:   %d/%m/%Y %H:%M:%S")
+		
 		Conexion()
-		TiempoF = time.strftime("\n\t [!] Finalizado: %d/%m/%Y %H:%M:%S")
-		TF=time.time()
-		print(TiempoI)
-		print(TiempoF)
-		Tiempo = TF-TI
-		print("\n\n\t Tiempo Transcurrido: {:.2f} segundos".format(Tiempo))
 		
 		if xD == False:
 			
