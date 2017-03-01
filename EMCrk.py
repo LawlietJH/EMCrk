@@ -236,6 +236,10 @@ def Conexion():
 			print("\n\t [+] Fue Guardada En El Archivo CC.zion.\n\n\t "+Autor)
 			os.system('Timeout /nobreak 03 > Nul')
 			exit(0)
+		except KeyboardInterrupt:
+			print("\n\n\t Cancelando Operación...")
+			os.system('Timeout /nobreak 03 > Nul')
+			exit(1)
 		except smtplib.SMTPAuthenticationError:
 			print ("\t [*] " + str(Pwd))
 		except smtplib.SMTPServerDisconnected:
