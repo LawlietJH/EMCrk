@@ -150,11 +150,11 @@ def Diccionario(NombreA):
 		Archivo = NombreA
 		
 	elif NombreA == "":
-		Archivo = "pwd.zion"
-		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.zion")
+		Archivo = "pwd.ZioN"
+		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.ZioN")
 	
-		if not path.exists("pwd.zion"):
-			print("\n\t [!] No Se Ha Creado El Diccionario pwd.zion.")
+		if not path.exists("pwd.ZioN"):
+			print("\n\t [!] No Se Ha Creado El Diccionario pwd.ZioN.")
 			resp=input("\n\t [+] ¿Desea Crear Ahora? [S/N]: ")
 			
 			if resp == "S" or resp == "Si" or resp == "SI" or resp == "si" or resp == "s":
@@ -172,8 +172,8 @@ def Diccionario(NombreA):
 				
 	else:
 		print("\n\t [!] No se encontro el Diccionario: "+NombreA)
-		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.zion")
-		Archivo = "pwd.zion"
+		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.ZioN")
+		Archivo = "pwd.ZioN"
 		os.system('Timeout /nobreak 02 > Nul')
 	
 		if not path.exists("pwd.zion"):
@@ -222,7 +222,7 @@ def Conexion():
 			xD = True
 			xD2 = False
 			
-			passwd=open('CC.zion','a')
+			passwd=open('CC.ZioN','a')
 			
 			FechaF = time.strftime("\n\n\t [*] Fecha: %d/%m/%Y %H:%M:%S")
 			Datos="\n\t"+FechaF+\
@@ -335,7 +335,7 @@ def main():
 	else:
 		print(banner)
 		Diccionario(NombA)
-		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.zion")
+		print("\n\t [!] Se Usará El Diccionario Por Defecto: pwd.ZioN")
 		Correo()
 		
 		Conexion()
